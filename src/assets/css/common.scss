@@ -1,0 +1,348 @@
+.bg-mediumgray:hover {
+    background-color: #f60;
+    color: white;
+    opacity: 1;
+}
+
+.bg-image-cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bg-image-contain {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+::-webkit-input-placeholder {
+    color: #606060;
+}
+
+:-ms-input-placeholder {
+    color: #606060;
+}
+
+::placeholder {
+    color: #606060;
+}
+
+.nounderline:hover {
+    text-decoration: none;
+}
+
+button,
+button:focus {
+    outline: 0;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+a {
+    outline: none;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+}
+.cursor-default {
+    cursor: default !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+.text-area-extend {
+    input {
+        height: auto;
+        overflow: auto;
+    }
+}
+.form-group {
+    &.inline{
+        display: flex;
+        align-items: center;
+        label{
+            margin: 0;
+            margin-right: 10px;
+        }
+    }
+    &.input-no-border{
+        input,select{
+            border:0;
+            box-shadow: none;
+        }
+    }
+    label {
+        color: #838383;
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+    .form-control[readonly] {
+        background-color: unset;
+    }
+    select,
+    input,
+    textarea {
+        border: 1px solid #484848;
+        border-radius: 2px !important;
+        font-size: convertToRem(16);
+        color: #434343;
+        resize: none;
+        &::placeholder {
+            color: #434343;
+            font-size: convertToRem(16);
+        }
+        &:disabled {
+            border: none;
+            background: #f0f1f3;
+        }
+    }
+    &__control {
+        border: 1px solid #484848 !important;
+        border-radius: 2px !important;
+        font-size: convertToRem(16) !important;
+        color: #434343;
+        &::placeholder {
+            color: #434343;
+            font-size: convertToRem(16) !important;
+        }
+    }
+
+    //   &__option {
+    //     background-color: white;
+
+    //     &--is-focused {
+    //       background-color: lightblue;
+    //     }
+    //   }
+
+    //   &__group {
+    //     padding: 0;
+    //   }
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.Toastify__toast {
+    &--success {
+        background: theme-color("primary") !important;
+    }
+    &--error {
+        background: theme-color("danger") !important;
+    }
+    &--info {
+        background: theme-color("info") !important;
+    }
+}
+
+.border-radius-0 {
+    border-radius: 0px;
+}
+
+//BORDER
+
+.border-radius-0 {
+    border-radius: 0px;
+}
+
+//CUSTOM SELECT
+
+.custom-select {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+        linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: right 17px top 1em, right 10px top 1em;
+    background-size: 7px 7px, 7px 7px;
+}
+.select-override {
+    background-color: inherit;
+    border: none;
+    margin-right: 10px;
+}
+.custom-date-group:before {
+    position: absolute;
+    content: "";
+    background-image: url(/static/media/calendar.5da74588.svg);
+    height: 20px;
+    width: 20px;
+    background-repeat: no-repeat;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 13px;
+}
+
+//other custom utils
+
+.text-status {
+    display: inline-block;
+    padding: 0.3rem 2rem;
+    border-radius: 10rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    &-primary {
+        background: lighten(theme-color("primary"), 35%);
+        color: theme-color("primary");
+    }
+    &-warning {
+        background: lighten(theme-color("warning"), 35%);
+        color: theme-color("warning");
+    }
+}
+
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.select-all-check {
+    padding-left: 14px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gainsboro;
+}
+.migration-data {
+    input {
+        width: 47%;
+    }
+}
+.member-shg label {
+    font-weight: bold;
+    font-size: 13px;
+}
+span.dotted {
+    position: absolute;
+    width: 20px;
+    top: 0;
+    background: red;
+    height: 20px;
+    border-radius: 50%;
+    right: 0;
+    margin: 0 auto;
+    left: 7px;
+}
+span.dotted.schema {
+    left: 7px;
+}
+
+.recharts-surface {
+    overflow: visible;
+}
+
+.custom-popover {
+    border: none;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.2);
+    .popover-header {
+        background: theme-color("primary");
+        color: white;
+        text-align: center;
+        font-size: 1rem !important;
+    }
+    .popover-body {
+        padding: 0;
+        margin: 0;
+        .table {
+            margin: 0;
+        }
+    }
+}
+
+.custom-breadcrumbs {
+    .breadcrumb {
+        background-color: transparent;
+        .breadcrumb-item + .breadcrumb-item {
+            &::before {
+                content: "<";
+            }
+
+            color: black;
+        }
+        .breadcrumb-item{
+            a:not(.pointer-event-none){
+                text-decoration: none;
+                outline: 1rem;
+                border-bottom: 1px solid;
+            }
+        }
+
+    }
+}
+
+.theme-input-inline {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    label {
+        margin-right: 0.8rem;
+        margin-bottom: 0;
+    }
+}
+
+//RECHART REMOVE MIDDLE LINE
+.recharts-cartesian-axis-tick-line {
+    stroke: none;
+}
+
+.absolute-loader-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(255,255,255,.7);
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    justify-content: center;
+    .spinner-border{
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+.asset-level{
+    background: #436CD6;
+    padding: 8px 10px;
+    color: #fff;
+    border-radius: 5px;
+    z-index: 1;
+    width: 100%;
+    bottom: 20px;
+    img{
+        background: #ffffff15;
+        padding: 10px 14px;
+        border-radius: 60px;
+    }
+    .title-text{
+        font-size: 14px !important;
+        color: #fff !important;
+    }
+    .subtitle-text{
+        font-size: 12px !important;
+        color: #fff !important;
+    }
+    p{
+        color: #fff;
+        margin-bottom: 0;
+    }
+    .mt-15{
+        margin-top: 15px;
+    }
+    .btn-asset{ 
+        background: #ffffff15;
+        padding: 8px;
+        .white{
+            opacity: 1;
+        }
+    }
+}

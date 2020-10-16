@@ -1,0 +1,113 @@
+.progressBarRound.active {
+    background-color: #436ad6;
+    border-style: hidden;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.progressBarRound.active:nth-child(2n) {
+    background-color: #36A7D9;
+}
+
+.progressBarRound {
+    position: relative;
+    border: 1px solid #838383;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-color: #838383;
+    border-color: #838383;
+    z-index: 2;
+    margin-bottom: 80px;
+    position: relative;
+
+    &:last-child {
+        margin-bottom: 0px;
+    }
+
+    &.activeCircle {
+        border-color: #838383;
+    }
+}
+
+.lineActive {
+    background: #838383;
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    border: none;
+    margin-left: 20px;
+    z-index: 1;
+    top: 0px;
+}
+
+.lineDisable {
+    background: #838383;
+    width: 1px;
+    position: absolute;
+    height: 100%;
+    border: none;
+    margin-left: 20px;
+    z-index: 1;
+    top: 0px;
+}
+
+.stepper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 87%;
+}
+
+.stepper-text {
+    position: relative;
+    top: 0;
+    margin-left: 50px;
+}
+
+.stepper-text h4 {
+    margin-bottom: 0px !important;
+    font-weight: 100 !important;
+    white-space: nowrap;
+}
+
+.stepper-text p {
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+.stepper-component {
+    position: relative;
+    margin: 20px;
+}
+
+.stepper-date {
+    font-size: 12px !important;
+    color: #838383 !important; 
+    margin-bottom: 10px !important;
+}
+
+.stepper-comment {
+    font-size: 14px !important;
+    color: #838383 !important; 
+}
+.stepper-link {
+    font-size: 12px !important;
+    color: #436CD6 !important; 
+    cursor: pointer;
+}
+.circle-text{
+    padding: 5px 14px;
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+}
+.circle-text-img{
+    padding: 10px 13px;
+    position: absolute;
+    color: #fff;
+    filter: invert(1);
+}

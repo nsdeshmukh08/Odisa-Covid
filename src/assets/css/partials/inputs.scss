@@ -1,0 +1,443 @@
+// Custom Switch
+
+/* The switch - the box around the slider */
+.custom-switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 20px;
+  margin-bottom: 0px;
+  /* Hide default HTML checkbox */
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9a9a9a;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: theme-color("primary");
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #9a9a9a;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(23px);
+    -ms-transform: translateX(23px);
+    transform: translateX(23px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+//SEARCH INPUT
+
+.search-input {
+  display: flex;
+  align-items: center;
+  border: none;
+  input {
+    border: none;
+    box-shadow: none !important;
+    border-color: transparent !important;
+    font-size: .9rem;
+    color: #838383;
+    padding:unset;
+    padding:0.375rem 0.5rem
+  }
+  i {
+    font-size: .9rem;
+  }
+}
+
+.checkbox-main--input {
+  display: none;
+}
+.checkbox-main{
+  .checkbox-main--input {
+    + span {
+      border-radius: 0px;
+      border:1px solid  #436CD6;
+    }
+      &:checked {
+        + span {
+          &::before {
+          color: #436CD6;
+          }
+        }
+      &:not(.theme-black) + span {
+        background: none !important;
+        border:1px solid  #436CD6 !important;
+      }
+      &.theme-black + span {
+        background:none !important;
+        border:1px solid  #436CD6;
+      }
+    }
+  }
+}
+
+.checkbox-main--input {
+  + span {
+    border-radius: 13px;
+    display: flex;
+    transition: all 150ms;
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 2px solid theme-color("lighGrey-2");
+    position: relative;
+  }
+  &:checked {
+    + span {
+      border-color: transparent !important;
+      &::before {
+        content: "\e90a";
+        color: #fff;
+        position: absolute;
+        font-family: icomoon;
+        text-rendering: auto;
+        font-size: 0.7rem;
+        height: 1.3rem;
+        width: 1.3rem;
+        font-weight: bold;
+        border-radius: 50%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: -2px;
+        left: -2px;
+      }
+    }
+    &:not(.theme-black) + span {
+      background: theme-color("primary") !important;
+    }
+    &.theme-black + span {
+      background: theme-color("darkGrey-2") !important;
+    }
+  }
+  &:disabled {
+    + span {
+      background: #00cecc;
+    }
+  }
+}
+.producer-tab-list .checkbox-main--input:checked:not(.theme-black) + span   >   a {
+  background: #4DA556 !important;
+}
+
+//CHECKBOX RADIO SCSS
+.custom-radio {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  label {
+    margin-bottom: 0px;
+  }
+  &.disabled {
+    
+    label,.checkmark{
+      border-color: theme-color('lightGrey') !important;
+      color:theme-color('lightGrey')
+    }
+  }
+}
+
+.custom-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: 1px solid theme-color("primary");
+}
+
+.custom-radio:hover input ~ .checkmark {
+  border: 1px solid theme-color("primary");
+}
+
+.custom-radio input:checked ~ .checkmark {
+  background-color: #fff;
+  border: 1px solid theme-color("primary");
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-radio input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-radio .checkmark:after {
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: theme-color("primary");
+}
+
+@include media-breakpoint-down(sm) {
+  .checkmark {
+    height: 14px;
+    width: 14px;
+  }
+  .custom-radio .checkmark:after {
+    top: 2px;
+    left: 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: theme-color("primary");
+  }
+  .custom-radio {
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+}
+
+.upload-input {
+  margin-bottom: 1rem;
+  &.browse {
+    span.upload-icon {
+      color: #fff;
+      background: #838383;
+    }
+    .custom-upload-file {
+      background: #effff0 0% 0% no-repeat padding-box;
+    }
+  }
+  .custom-upload-file {
+    span.browse.ml-auto {
+      color: theme-color("primary");
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    a{
+      display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 72%;
+    text-overflow: ellipsis;
+    }
+
+    .custom-upload-file a {
+      color: #1f1f1f;
+    }
+  }
+  span.upload-icon {
+    height: 2.3rem;
+    width: 2.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    margin-right: 13px;
+  }
+
+  .custom-upload-file {
+    border: 0.5px dashed theme-color("primary");
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 5px;
+    padding: 1rem;
+  }
+}
+
+//REACT DATE PICKER CSS
+.data-pick input {
+  border: 1px solid #484848;
+  border-radius: 2px !important;
+}
+.custom-date-group {
+  position: relative;
+}
+.custom-date-group:before {
+  position: absolute;
+  content: "";
+  background-image: url("../../images//calendar.svg");
+  height: 20px;
+  width: 20px;
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 13px;
+}
+.data-pick {
+  margin-bottom: 1rem;
+}
+.data-pick input::placeholder {
+  font-size: 1rem;
+  color: #434343;
+}
+.data-pick label {
+  color: #838383;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.custom-reselect .css-1hb7zxy-IndicatorsContainer {
+  opacity: 0;
+}
+.custom-reselect .form-group__control.css-yk16xz-control {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 17px top 1em, right 10px top 1em;
+  background-size: 7px 7px, 7px 7px;
+}
+
+.custom-multi-select{
+  position: relative;
+  .form-check{
+    display: flex;
+    label{
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .selectBox{
+    .overSelect{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      cursor: pointer;
+    }
+  }
+  &.show .content{
+    visibility:initial;
+    opacity: 1;
+  }
+  .multi_s_content {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    width: 11rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    max-height: 22rem;
+    z-index: 9999;
+    background: white;
+    transition: all .3s ease;
+    .searchbox {
+      border: none;
+      width: 100%;
+      outline: none;
+      border-bottom: 1px solid gainsboro;
+      height: 45px;
+      padding: 1rem 1rem;
+      &::placeholder{
+        font-size: .8rem;
+      }
+    }
+    .list-container{
+      flex-grow: 1;
+      overflow-y: auto;
+      .list{
+        padding: .5rem 1rem;
+        font-size: .9rem;
+        &,label{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  
+  .content{
+    position: absolute;
+    top: 111%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    max-height: 22rem;
+    z-index: 9999;
+    background: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s ease;
+    .searchbox {
+      border: none;
+      width: 100%;
+      outline: none;
+      border-bottom: 1px solid gainsboro;
+      height: 45px;
+      padding: 1rem 1rem;
+      &::placeholder{
+        font-size: .8rem;
+      }
+    }
+    .list-container{
+      flex-grow: 1;
+      overflow-y: auto;
+      .list{
+        padding: .5rem 1rem;
+        font-size: .9rem;
+        &,label{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+

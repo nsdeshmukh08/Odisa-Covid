@@ -1,0 +1,12 @@
+export { BasicDetails } from './BasicDetails';
+export { Details } from './Details';
+export { EnterpriseActivity } from './EnterpriseActivity';
+export { BankDetails } from './BankDetails';
+export { Activity } from './Activity';
+export { Upload } from './Upload';
+export { IAReviewSubmit } from './ReviewSubmit';
+export { SHGDetails } from './SHG';
+export { ExistingLoan } from './ExistingLoan';
+export { Baseline } from './Baseline';
+export { LossIncurred } from './LossIncurred';
+export { FundRequirement } from './FundRequirement';

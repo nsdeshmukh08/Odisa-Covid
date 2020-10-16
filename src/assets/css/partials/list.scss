@@ -1,0 +1,43 @@
+.custom-header-list{
+    display: flex;
+    margin-bottom: 0px  !important;
+    li{
+        display: flex;
+        align-items: center;
+        padding: 1rem 1.6rem;
+        color:theme-color('lighGrey-2');
+        i{
+            font-size: 1.2rem;
+            margin-right: 1.5rem;
+        }
+        p{
+            font-size: .8rem;
+            margin-bottom: 0px;
+            color: theme-color('darkGrey-1')
+        }
+        border-left: 1px solid gainsboro;
+    }
+}
+
+
+.custom-list{
+    margin-bottom: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .9rem;
+    .col-md-6{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    label{
+        color:theme-color('lighGrey-2');
+        font-weight: 400;
+        &:first-child{
+            min-width: 9rem;
+        }
+        strong{
+            color: theme-color('black');
+            font-weight: 500;
+        }
+    }
+}

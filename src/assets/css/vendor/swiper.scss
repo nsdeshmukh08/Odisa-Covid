@@ -1,0 +1,33 @@
+@import 'swiper/swiper.scss';
+
+.swiper-button-next,.swiper-button-prev{
+    position: absolute;
+    top: 50%;
+    width: convertToRem(50);
+    height: convertToRem(50);
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    background-size: convertToRem(50) convertToRem(50);
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    opacity: .7;
+    &.swiper-button-disabled{
+        opacity: .3;
+    }
+}
+
+.swiper-button-next{
+    content : "MNext";
+    background-image: url('../../images/next.svg');
+    right: 10px;
+    left: auto;
+}
+
+.swiper-button-prev{
+    content : "Prev";
+    background-image: url('../../images/back.svg');
+    left: 10px;
+    right: auto;
+}

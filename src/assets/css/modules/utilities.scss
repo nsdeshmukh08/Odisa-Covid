@@ -1,0 +1,86 @@
+//border
+.borderless {
+  @include borderless(10);
+}
+
+@for $i from 1 through 3 {
+  .br-#{$i} {
+    border-radius: convertToRem($i * 2) !important;
+  }
+}
+
+//caret
+.custom-caret {
+  display: inline-flex;
+  background: #f0f0f0;
+  width: 1rem;
+  height: 1rem;
+  padding: 0.8rem;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  i {
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+}
+
+//line-height
+
+.lh-normal {
+  line-height: normal !important;
+}
+
+//cursor
+.cursor-pointer {
+  cursor: pointer;
+}
+.pointer-event-none {
+  pointer-events: none;
+}
+
+.custom-scrollbar {
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+.br-0{
+  border-radius: 0px !important;
+}
+
+.rotate{
+  transition: all .3s;;
+  &.active{
+    transform : rotate(180deg)
+  }
+}
+
+//BTN OVERRIDE
+.btn-yellow,.btn-orange {
+  color: white !important;
+}
+
+.pointer-event-none{
+  pointer-events: none;
+}
+
+.visibility-hidden{
+  visibility: hidden;
+}

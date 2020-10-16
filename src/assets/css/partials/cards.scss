@@ -1,0 +1,75 @@
+//application card
+.application-card{
+    @include borderless;
+    cursor: pointer;
+    margin-bottom: 1.5rem !important;
+    transition: all .3s ease-in-out;
+    &-wrapper{
+        display: flex;
+        align-items: center;
+        img{
+            object-fit: contain;
+            width: 8rem;
+            @include media-breakpoint-down(lg) {
+                width: auto !important;
+            }
+        }
+        .content{
+            .heading{
+                // font-weight: bold;
+                @include media-breakpoint-down(lg) {
+                    word-break: break-all; 
+                }
+                
+            }
+            .para{
+                color : theme-color('grey');
+                font-size: convertToRem(14);
+                line-height: convertToRem(20);
+            }
+        }
+    }
+    &:hover{
+        box-shadow: 0 0 0.5rem rgba(0,0,0,.1);
+    } 
+}
+
+.assessment-card{
+    background-color: lighten($color: theme-color('primary'), $amount: 48);
+    border-color: theme-color('primary');
+    .card-body{
+        padding-left: .5rem;
+        padding-top : .5rem;
+        padding-bottom : .5rem;
+        padding-right: 2rem;
+    }
+    &-header{
+        display: flex;
+        align-items: center;
+        .icon{
+            width: 5rem;
+            height: 5rem;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        .icon-assessment{
+            width: 4rem;
+            height: 4rem;
+            background-color: #ffffff30;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-right: 1rem;
+            .icon-list{
+                color: white;
+            }
+        }
+    }
+}

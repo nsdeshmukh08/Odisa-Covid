@@ -1,0 +1,138 @@
+//default theme
+.table-theme {
+    thead th,
+    tbody td {
+        text-transform: capitalize;
+    }
+    tbody tr{
+        &:hover{
+            background-color: lighten(theme-color('primary'),50%);
+        }
+        cursor: pointer;
+        text-align: center;
+    }
+    thead th {
+        font-size: convertToRem(15);
+        color: black;
+        white-space: nowrap;
+        text-align: center;
+    }
+    tbody td {
+        font-size: convertToRem(15);
+        font-weight: bold;
+        vertical-align: middle;
+        color: gray;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+    }
+
+    &.theme-light-grey {
+        thead {
+            th {
+                font-size: convertToRem(15);
+                color: theme-color("lightGrey");
+                font-weight: 500;
+            }
+            border-bottom: 1px solid theme-color('gainsboro');
+        }
+        tbody {
+            tr {
+                td {
+                    color: theme-color("darkGrey-1");
+                    font-size: convertToRem(14);
+                    font-weight: 400;
+                    transition: all 0.3s;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background: lighten($color: theme-color('primary'), $amount: 48);
+                    td {
+                        font-weight: 600;
+                    }
+                }
+                &.active {
+                    cursor: pointer;
+                    background: lighten($color: theme-color('primary'), $amount: 48);
+                    td {
+                        color: theme-color("darkGrey-1");
+                        font-size: convertToRem(14);
+                        font-weight: 700;
+                        transition: all 0.3s;
+                    }
+                }
+            }
+        }
+    }
+    &.with-dot{
+        tbody tr{
+            td:first-child{
+                position: relative;
+                padding-left: 2rem;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+            &:not(.active){
+                td:not(.empty):first-child{
+                   &::before{
+                    content: '•';
+                    font-size: 1.4rem;
+                    position: absolute;
+                    left:10%;
+                    bottom: 1.2rem;
+                    color: theme-color('primary');
+                   } 
+                }
+            }
+        }
+    }
+}
+
+
+.custom-striped-table{
+    .table-striped tbody tr:nth-of-type(even){
+        background-color: #F5F5F5;
+    }
+    .table-striped tbody tr:nth-of-type(odd){
+        background-color: transparent;
+    }
+    th,td{
+        border:none;
+        font-size: .9rem;
+        text-align: center;
+    }
+    thead{
+        th{
+            color: theme-color('lightGrey');
+            font-weight: 600;
+        }
+        th:nth-child(1){
+            padding: 0.75rem 1.5rem;
+        }
+        th:nth-child(2){
+            color: theme-color('black');
+            width: 50%;
+            text-align: left;
+        }
+        tr>*:last-child{
+            padding-right: 3rem; 
+        }
+
+    }
+    tbody{
+        th:nth-child(1){
+            padding: 0.75rem 1.5rem;
+        }
+        tr>*:last-child{
+            padding-right: 3rem; 
+        }
+        a{
+            font-weight: 500;
+        }
+        tr td:nth-child(2){
+            color: theme-color('black');
+            width: 50%;
+            text-align: left;
+        }
+    }  
+}

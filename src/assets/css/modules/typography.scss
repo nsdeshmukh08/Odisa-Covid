@@ -1,0 +1,16 @@
+//HEADING FONT SIZES
+
+@each $header, $size in $font-size {
+    #{$header},
+    .#{$header} {
+        font-size: convertToRem($size) !important;
+    }
+}
+
+//FONT WEIGHT
+
+@for $i from 1 through 9 {
+    .fw-#{$i*100} {
+        font-weight: $i * 100 !important;
+    }
+}

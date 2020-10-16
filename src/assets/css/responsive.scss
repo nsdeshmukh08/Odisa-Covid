@@ -1,0 +1,108 @@
+html{
+    @include media-breakpoint-only(xs) { 
+        font-size: 12px;
+    }
+    @include media-breakpoint-only(sm) { 
+        font-size: 12px;
+    }
+    @include media-breakpoint-only(md) { 
+        font-size: 14px;
+    }
+    @include media-breakpoint-only(lg) { 
+        font-size: 14px;
+    }
+    @include media-breakpoint-only(xlg) { 
+        font-size: 14px;
+    }
+    @media screen and (min-width: 1900px){
+        font-size: 18px;
+    }
+}
+
+@include media-breakpoint-down(lg) { 
+    .application-card{
+        &-wrapper{
+            flex-direction: column;
+            .img-fluid{
+                height: 100px;
+                margin-bottom: 1.5rem;
+            }
+            .content{
+                text-align: center;
+            }
+        }
+    }
+
+    .user-login-overall,
+    .forgot-login-overall{
+        margin-top:2rem;
+        margin-bottom:2rem;
+    }
+    //utils
+    .mobile-height-auto{
+        height: auto;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .application-list-main-container{
+        margin-left: 4rem !important;
+        margin-right: 4rem !important;
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .side-nav{
+        position: fixed;
+        left:0;
+        top:0;
+        min-width: convertToRem(320);
+        z-index: 9999;
+        height: 100%;
+        transform: translate(-100%);
+        transition: all .3s ease;
+        // padding: .8rem !important;
+    }
+    .toggler{
+        display: block !important;
+    }
+    body.open-sidebar .side-nav,.show-details{
+        transform: translate(0);
+        & + .modal-backdrop{
+            display: block !important;
+        }
+    }
+    .show-details,.show-details-md{
+        .user-list {
+            margin-right: unset !important;
+            overflow-x: hidden;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .show-details,.show-details-md{
+        .staffDetails {
+            transform: translateX(0%);
+            width: 100% !important;
+            z-index: 9999;
+        }
+    }
+    .custom-header-list{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1900px){
+    .show-details-md{
+        .user-list{
+            margin-right: convertToRem(720) !important;
+            overflow-x: hidden;
+        
+        }
+        .staffDetails{
+          transform: translateX(0%); 
+          width: convertToRem(720) !important;
+        }
+    }
+}

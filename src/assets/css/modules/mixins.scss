@@ -1,0 +1,17 @@
+@mixin font-size($size) {
+    font-size: $size;  
+}
+
+@mixin borderless($radius:12){
+    border: none !important;
+    border-radius: convertToRem($radius) !important;
+}
+
+@mixin addMarginExcludingLastChild($size){
+    & > *:not(:last-child){
+        margin-bottom: convertToRem($size);
+    }
+    &>*:last-child{
+        margin-bottom: 0px;
+    }
+}

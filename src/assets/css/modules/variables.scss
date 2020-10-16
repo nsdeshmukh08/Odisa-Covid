@@ -1,0 +1,39 @@
+//bootstrap override
+$theme-colors: (
+    "primary": #436CD6,
+    "lightBlue" : #F0F7FF,
+    "secondary": #0077FB,
+    "darkGrey" : #4e4e4e,
+    "darkGrey-1": #434343,
+    "darkGrey-2" : #3C3C3C,
+    "black": #292929,
+    'grey' : #4A4A4A,
+    'lightGrey' : #A3A6B4,
+    'lighGrey-2' : #838383,
+    'gainsboro' : #EBEBEB,
+    'success' : #007B2B,
+    'green' : #54D887,
+    'lightGreen' : #BFFFD5,
+    'orange' : #FF6A6A ,
+    'yellow' : #ffba6a 
+);
+$body-bg: whitesmoke;
+
+//custom variable
+$default-font-size:16;
+
+$font-size:(
+    h1 : 22,
+    h2 : 20,
+    h3 : 18,
+    h4 : 16,
+    h5 : 15,
+    h6 : 14
+);
+
+$container-max-widths: (
+  sm: 33.75rem,
+  md: 45rem,
+  lg: 60rem,
+  xl: 71.25rem
+);
